@@ -1,0 +1,34 @@
+method: bayes
+metric:
+  goal: maximize
+  name: mean_score
+name: oneshot-sweep
+parameters:
+  frequency_penalty:
+    max: 1.0
+    min: 0.1
+  max_tokens:
+    values:
+      - 60
+      - 70
+      - 80
+  model_name:
+    values:
+      - text-davinci-002
+      - text-curie-001
+      - text-babbage-001
+      - text-ada-001
+  num_generations:
+    value: 5
+  presence_penalty:
+    max: 1.0
+    min: 0.1
+  stop_seq:
+    value: '###'
+  temperature:
+    max: 1.0
+    min: 0.1
+  top_p:
+    max: 1.0
+    min: 0.1
+program: one-shot-sweep.py
